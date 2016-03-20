@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+
+using namespace std;
+
+int main() {
+
+
+     int H,U,D,F;
+
+     while(scanf("%d %d %d %d",&H, &U, &D, &F) && H)
+     {
+        int current_day = 0;
+        double current_U = U;
+        double current_height = 0;
+        double fatigue = U* (F/100.0);
+        do
+        {
+
+        current_day++;
+
+        current_height = current_height + current_U;
+
+        if(current_height>H)
+            {
+                printf("success on day");
+                break;
+            }
+         current_height = current_height - D;
+         if(current_height<0)
+         {
+            printf("failure on day");
+            break;
+         }
+
+         current_U = current_U - fatigue;
+
+         if(current_U < 0)
+            current_U = 0;
+        }while(true);
+        printf(" %d\n", current_day);
+     }
+
+
+    return 0;
+}
