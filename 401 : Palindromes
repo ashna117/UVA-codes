@@ -1,0 +1,60 @@
+#include  <stdio.h>
+#include <string.h>
+#include <iostream>
+
+using namespace std;
+
+int main(){
+ int len,i,j,f_p,f_m;
+ char str[100000],mirr[300];
+
+
+ memset(mirr,NULL,sizeof(mirr));
+ mirr['A']='A';
+ mirr['E']='3';
+ mirr['H']='H';
+ mirr['I']='I';
+ mirr['J']='L';
+ mirr['L']='J';
+ mirr['M']='M';
+ mirr['O']='O';
+ mirr['S']='2';
+ mirr['T']='T';
+ mirr['U']='U';
+ mirr['V']='V';
+ mirr['W']='W';
+ mirr['X']='X';
+ mirr['Y']='Y';
+ mirr['Z']='5';
+ mirr['1']='1';
+ mirr['2']='S';
+ mirr['3']='E';
+ mirr['5']='Z';
+ mirr['8']='8';
+ while(scanf("%s",&str)==1){
+  f_p = f_m =1;
+  len=strlen(str);
+
+  for(i = 0, j = len-1; i < len; i++,j-- ){
+   if(f_p){
+    if(str[i]!=str[j])
+     f_p=0;
+   }
+   if(f_m){
+    if(mirr[str[i]]!=str[j])
+     f_m=0;
+   }
+  }
+
+  if (f_p && f_m)
+   printf ("%s -- is a mirrored palindrome.\n",str);
+  else if (f_p)
+   printf ("%s -- is a regular palindrome.\n",str);
+  else if (f_m)
+   printf ("%s -- is a mirrored string.\n",str);
+  else
+   printf ("%s -- is not a palindrome.\n",str);
+  printf("\n");
+ }
+ return 0;
+}
