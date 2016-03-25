@@ -67,7 +67,5 @@ int main(){
     printf("\n");
     }
 
-    //printf("Output String: ");
-    //puts(line);
     return 0;
 }
