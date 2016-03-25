@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<string.h>
+#include <ctype.h>
+
+int main(){
+    char line[1500];
+    int i,j,f_p,len;
+    int tc,cnt = 0;;
+    scanf("%d\n", &tc);
+
+
+    while(gets(line))
+    {
+        cnt++;
+        if(cnt>tc)
+            break;
+
+        len = strlen(line);
+
+        if(len==4 && line[0]=='D' && line[1]=='O' && line[2]=='N' && line[3]=='E')
+        break;
+
+        f_p = 1;
+    for(i=0; line[i]!='\0'; ++i)
+    {
+        while (!((line[i]>='a'&&line[i]<='z') || (line[i]>='A'&&line[i]<='Z' || line[i]=='\0')))
+        {
+            for(j=i;line[j]!='\0';++j)
+            {
+                line[j]=line[j+1];
+            }
+            line[j]='\0';
+        }
+    }
+    len = strlen(line);
+
+    for( i = 0; line[i]; i++)
+    {
+        line[i] = tolower(line[i]);
+    }
+    int arr[256] = {0};
+    for(i=0; line[i]; i++)
+    {
+        arr[line[i]]++;
+    }
+    int max = 0;
+    char maxchar = 0;
+    for(i=0; i<256; i++)
+    {
+        if(arr[i] > max)
+        {
+            max = arr[i];
+
+
+        }
+
+    }
+    for(i=0; i<256; i++)
+    {
+        if(arr[i] == max)
+        {
+            maxchar = i;
+            printf("%c", maxchar);
+        }
+
+    }
+    printf("\n");
+    }
+
+    //printf("Output String: ");
+    //puts(line);
+    return 0;
+}
