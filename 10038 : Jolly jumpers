@@ -1,0 +1,51 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <algorithm>
+
+
+using namespace std;
+
+int n;
+int num [3001] = {0};
+int diff[3001] = {0};
+
+bool jolly()
+{
+    int i;
+    for(i= 0; i<n-1; i++)
+    {
+        diff[i] = abs(num[i+1] - num[i]);
+
+    }
+    sort(diff, diff+n-1);
+    for(i= 0; i<n-1; i++)
+    {
+        if(diff[0] != i+1)
+        {
+            printf("Not jolly\n");
+            return false;
+        }
+        printf("Jolly\n");
+        return true;
+    }
+
+}
+
+int main() {
+
+     int i;
+
+     while(scanf("%d", &n)==1){
+     for(i=0;i<n;i++)
+     {
+         scanf("%d", &num[i]);
+     }
+     jolly();
+     }
+
+
+    return 0;
+}
