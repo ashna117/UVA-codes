@@ -23,14 +23,15 @@ bool jolly()
     sort(diff, diff+n-1);
     for(i= 0; i<n-1; i++)
     {
-        if(diff[0] != i+1)
+        if(diff[i] != i+1)
         {
             printf("Not jolly\n");
             return false;
         }
+    }
         printf("Jolly\n");
         return true;
-    }
+
 
 }
 
