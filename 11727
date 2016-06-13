@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int T,input[4],i,min,max,cases=0;
+    scanf("%d", &T);
+
+    while(T--)
+    {
+        cases++;
+        for(i=0; i<3; i++)
+        {
+            scanf("%d", &input[i]);
+        }
+        min = input[0];
+        max = input[0];
+
+        for(i=0; i<3; i++)
+        {
+            if(input[i]<min)
+                min = input[i];
+            if(input[i]>max)
+                max = input[i];
+
+        }
+        for(i=0; i<3; i++)
+        {
+            if(input[i]!= min && input[i]!= max)
+                printf("Case %d: %d\n", cases,input[i]);
+        }
+    }
+
+
+    return 0;
+}
