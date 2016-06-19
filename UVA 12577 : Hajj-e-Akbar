@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char str[100] ;
+    int i=0,cases=0;
+
+    while(gets(str))
+    {
+        cases++;
+        if(!strcmp(str,"*"))
+            break;
+        else if(!strcmp(str,"Hajj"))
+            printf("Case %d: Hajj-e-Akbar\n",cases);
+        else if(!strcmp(str,"Umrah"))
+            printf("Case %d: Hajj-e-Asghar\n",cases);
+
+
+    }
+
+
+    return 0;
+}
