@@ -1,0 +1,52 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+
+
+using namespace std;
+
+int main()
+{
+    int T,C,i;
+    long long cost;
+    scanf("%d", &T);
+    getchar();
+
+    int mirr[256];
+
+    while(T--) {
+       for ( i = 0; i < 256; i++) {
+			mirr[i] = 0;
+		}
+       cost = 0;
+
+       scanf("%d", &C);
+
+
+        for (i = 0; i < C; i++) {
+			int p;
+      char c;
+
+			scanf("%*c%c%d",&c,&p);
+			mirr[(int) c] = p;
+		}
+    int line;
+    scanf("%d",&line);
+    getchar();
+		for ( i = 0; i < line; i++) {
+            unsigned char news;
+			while ((news = cin.get()) != '\n') {
+				cost += mirr[(int) news];
+			}
+		}
+
+		printf("%.2lf$\n", cost / 100.0);
+	}
+
+
+
+
+
+
+    return 0;
+}
