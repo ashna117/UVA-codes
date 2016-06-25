@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+
+
+int main()
+{
+long long int army1,army2;
+ while(scanf("%lld %lld",&army1,&army2)!=EOF)
+    {
+        printf("%lld\n",abs(army1-army2));
+    }
+ return 0;
+}
+
